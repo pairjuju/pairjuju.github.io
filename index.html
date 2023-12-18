@@ -27,7 +27,6 @@
                 <a class="navbar-brand" href="#">
                     <h1 class="m-0">
                         <img src="images/logo.png" class="logo-desktop">
-                        <img src="images/logo-icon.png" class="logo-mobile">
                     </h1>
                 </a>
                 <div>
@@ -490,6 +489,7 @@
 
         
         //*------------check image Loaded start
+        //因為masonry會發生image overlapping，所以用imageloaded確定圖片load好後再call masonry
         $('#my-gallery').imagesLoaded().done( function( instance ) {
             console.log('DONE  - all images have been successfully loaded');
             //*-------------masonry start
