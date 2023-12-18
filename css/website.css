@@ -70,20 +70,16 @@ custom
 /*-------
 header
 ------*/
-.custom-navbar{flex-direction: row;justify-content: space-between;padding:0 1rem;}
+.custom-navbar{flex-direction: row;justify-content: space-between;padding:0 .6rem;}
 .custom-navbar .navbar-nav{flex-direction: row;}
 .custom-navbar .navbar-brand{margin-right:0}
 .custom-navbar .navbar-brand img{width:120px;}
-.custom-navbar .navbar-brand .logo-desktop{display: block;}
-.custom-navbar .navbar-brand .logo-mobile{display: none;}
 .custom-navbar .navbar-nav .nav-link{padding:.8rem 1rem;}
 .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
     border-bottom:3px solid #ffe58c;
 }
 @media(max-width:575.98px){
-    .custom-navbar .navbar-brand img{width:50px;}
-    .custom-navbar .navbar-brand .logo-desktop{display: none;}
-    .custom-navbar .navbar-brand .logo-mobile{display: block;}
+    .custom-navbar .navbar-brand img{width:80px;}
     .custom-navbar .navbar-nav .nav-link{padding:.6rem .5rem;font-size: 1rem;}
 }
 
@@ -277,7 +273,7 @@ resume
 .exp-part .job-title{font-size:20px;margin-bottom:10px;font-weight: 700;color:#333}
 .exp-part .desc{margin-bottom:10px;line-height:1.8}
 
-.circle-list{list-style:circle!important;padding-inline-start: 20px;}
+.circle-list{list-style:outside!important;padding-inline-start: 20px;}
 
 @media(max-width:767.98px){
     .resume-title.name,
