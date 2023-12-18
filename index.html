@@ -330,7 +330,7 @@
                         <a href="images/original/img001.jpg"
                             data-pswp-width="3500" data-pswp-height="2300" target="_blank">
                             <img src="images/thumbnail/img001.jpg"
-                                alt="封面設計" width="800" height="526" />
+                                alt="封面設計" />
                         </a>
                         <div class="pswp-caption-content"><b>封面設計</b><br>Notebook cover design</div>
                     </div>
@@ -338,7 +338,7 @@
                         <a href="images/original/img002.jpg"
                             data-pswp-width="2660" data-pswp-height="2264" target="_blank">
                             <img src="images/thumbnail/img002.jpg"
-                                alt="水彩手繪" width="800" height="681" />
+                                alt="水彩手繪" />
                         </a>
                         <div class="pswp-caption-content"><b>水彩手繪</b><br>Watercolor painting</div>
                     </div>
@@ -346,7 +346,7 @@
                         <a href="images/original/img004.jpg"
                             data-pswp-width="3264" data-pswp-height="2448" target="_blank">
                             <img src="images/thumbnail/img004.jpg"
-                                alt="攝影" width="800" height="600"/>
+                                alt="攝影" />
                         </a>
                         <div class="pswp-caption-content"><b>攝影</b><br>Photography</div>
                     </div>
@@ -354,7 +354,7 @@
                         <a href="images/original/img003.jpg"
                             data-pswp-width="1200" data-pswp-height="920" target="_blank">
                             <img src="images/thumbnail/img003.jpg"
-                                alt="周邊商品設計(壓克力)" width="800" height="613" />
+                                alt="周邊商品設計(壓克力)" />
                         </a>
                         <div class="pswp-caption-content"><b>周邊商品設計(壓克力)</b><br>Product design(acrylic)</div>
                     </div>
@@ -362,7 +362,7 @@
                         <a href="images/original/img013.jpg"
                             data-pswp-width="800" data-pswp-height="1097" target="_blank">
                             <img src="images/thumbnail/img013.jpg"
-                                alt="周邊商品設計(壓克力)"  width="800" height="1097"/>
+                                alt="周邊商品設計(壓克力)" />
                         </a>
                         <div class="pswp-caption-content"><b>周邊商品設計(壓克力)</b><br>Product design(acrylic)</div>
                     </div>
@@ -370,7 +370,7 @@
                         <a href="images/original/img012.jpg"
                             data-pswp-width="1000" data-pswp-height="1000" target="_blank">
                             <img src="images/thumbnail/img012.jpg"
-                                alt="周邊商品設計(貼紙)" width="1000" height="1000"/>
+                                alt="周邊商品設計(貼紙)" />
                         </a>
                         <div class="pswp-caption-content"><b>周邊商品設計(貼紙)</b><br>Product design(sticker)</div>
                     </div>
@@ -378,7 +378,7 @@
                         <a href="images/original/img011.jpg"
                             data-pswp-width="1000" data-pswp-height="716" target="_blank">
                             <img src="images/thumbnail/img011.jpg"
-                                alt="插畫" width="800" height="573"/>
+                                alt="插畫" />
                         </a>
                         <div class="pswp-caption-content"><b>插畫</b><br>illustration</div>
                     </div>
@@ -386,7 +386,7 @@
                         <a href="images/original/img007.jpg"
                             data-pswp-width="1200" data-pswp-height="840" target="_blank">
                             <img src="images/thumbnail/img007.jpg"
-                                alt="插畫" width="800" height="560"/>
+                                alt="插畫" />
                         </a>
                         <div class="pswp-caption-content"><b>插畫</b><br>illustration</div>
                     </div>
@@ -394,7 +394,7 @@
                         <a href="images/original/img008.jpg"
                             data-pswp-width="2982" data-pswp-height="3296" target="_blank">
                             <img src="images/thumbnail/img008.jpg"
-                                alt="插畫" width="800" height="884"/>
+                                alt="插畫" />
                         </a>
                         <div class="pswp-caption-content"><b>插畫</b><br>illustration</div>
                     </div>
@@ -402,7 +402,7 @@
                         <a href="images/original/img009.jpg"
                             data-pswp-width="3543" data-pswp-height="2216" target="_blank">
                             <img src="images/thumbnail/img009.jpg"
-                                alt="插畫" width="800" height="500"/>
+                                alt="插畫" />
                         </a>
                         <div class="pswp-caption-content"><b>插畫</b><br>illustration</div>
                     </div>
@@ -453,6 +453,8 @@
 </script>
 <!-- masonry -->
 <script src="components/masonry/masonry.pkgd.min.js"></script>
+<!--imageload-->
+<script src="components/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
 <script>
     $(function () {
@@ -486,14 +488,20 @@
 
         //*------------navbar end
 
-        //*-------------masonry start
-        $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer',//css有設定在mobile時width49%
-            percentPosition: true,
-            gutter: 10
-        })
-        //*-------------masonry end
+        
+        //*------------check image Loaded start
+        $('#my-gallery').imagesLoaded().done( function( instance ) {
+            console.log('DONE  - all images have been successfully loaded');
+            //*-------------masonry start
+            $('.grid').masonry({
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer',//css有設定在mobile時width49%
+                percentPosition: true,
+                gutter: 10
+            })
+            //*-------------masonry end
+        });
+        //*------------check image Loaded end
 
         //*-------------sticky sidebar start
         $('.section.intro .col-sm-12').theiaStickySidebar({
